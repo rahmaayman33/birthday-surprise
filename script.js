@@ -28,7 +28,8 @@ const letterText = `Happy Birthday, My Love ❤️
 
 يلا بقى... افتح المفاجأة واستمتع بيها، وأتمنى تفضل فاكرها دايمًا.
 
-بحبك ❤️`;
+بحبك
+ ❤️`;
 gateForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const value = gateInput.value.trim();
@@ -58,7 +59,7 @@ function unlockSite() {
     gateError.style.display = "none";
 
     showLetter();
-    continueBtn.addEventListener("click", () => {
+continueBtn.addEventListener("click", () => {
 
     secretLetter.style.display = "none";
 
@@ -70,7 +71,16 @@ function unlockSite() {
 
         startLoading();
 
-    },800);
+        // إظهار الموقع
+        site.classList.add("revealed");
+        site.setAttribute("aria-hidden", "false");
+        initScrollReveal();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }, 800);
 
 });
 }
@@ -312,19 +322,23 @@ loadingText.innerHTML=loadingMessages[3];
 
 }
 
-if(progress>=100){
+if (progress >= 100) {
 
-clearInterval(interval);
+    clearInterval(interval);
 
-loadingScreen.classList.remove("show");
+    loadingScreen.classList.remove("show");
 
-site.classList.add("revealed");
+    site.classList.add("revealed");
+    site.setAttribute("aria-hidden", "false");
 
-site.setAttribute("aria-hidden","false");
+    initScrollReveal();
 
-playMusic();
-
-initScrollReveal();
+    // يفتح أول الصفحة
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant"
+    });
 
 }
 
