@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday</title>
+
+<!-- Google Fonts: Playfair Display (headlines) + Cormorant Garamond (romantic accents) + Poppins (body/UI) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     BACKGROUND HEARTS CANVAS — floats behind everything, ambient
+============================================================= -->
+<canvas id="hearts-canvas" aria-hidden="true"></canvas>
+
+<!-- ============================================================
+     PASSWORD GATE — envelope + wax seal unlock experience
+     This is the first thing visitors see. Nothing behind it is
+     reachable until the correct password is entered.
+============================================================= -->
+<div id="gate" class="gate">
+  <div class="gate-inner">
+
+    <div class="envelope" id="envelope">
+      <div class="envelope-back"></div>
+      <div class="envelope-flap"></div>
+      <div class="wax-seal" id="wax-seal">
+        <span class="wax-seal-glyph">&#10084;</span>
+      </div>
+      <div class="envelope-front"></div>
+    </div>
+
+    <p class="gate-eyebrow">a gift, sealed just for you</p>
+    <h1 class="gate-title">Before you open this&hellip;</h1>
+    <p class="gate-subtitle">Enter the password to unlock it</p>
+
+    <form id="gate-form" class="gate-form" autocomplete="off">
+      <input
+        id="gate-input"
+        class="gate-input"
+        type="password"
+        inputmode="numeric"
+        placeholder="&bull; &bull; &bull; &bull; &bull; &bull; &bull;"
+        aria-label="Password"
+      />
+      <button type="submit" class="gate-button">
+        <span>Unlock</span>
+      </button>
+    </form>
+        <div id="secret-letter" class="secret-letter">
+
+    <h2>To My Favorite Person ❤️</h2>
+
+    <p id="typewriter"></p>
+
+    <button id="continue-btn" class="continue-btn">
+        Continue ❤️
+    </button>
+
+</div>
+    <p id="gate-error" class="gate-error" role="alert" aria-live="polite">
+      That's not quite it &mdash; try again
+    </p>
+
+  </div>
+</div>
+<!-- ================= LOADING SCREEN ================= -->
+<div id="loading-screen" class="loading-screen">
+
+    <div class="loading-heart">❤️</div>
+
+    <h2 class="loading-title">Loading Memories...</h2>
+
+    <p class="loading-text" id="loading-text">
+        Collecting our beautiful moments...
+    </p>
+
+    <div class="loading-bar">
+
+        <div class="loading-progress" id="loading-progress"></div>
+
+    </div>
+
+</div>
+
+<!-- ============================================================
+     MAIN SITE — hidden (aria + visually) until password is correct
+============================================================= -->
+<div id="site" class="site" aria-hidden="true">
+
+  <!-- floating music control, appears once unlocked -->
+  <button id="music-toggle" class="music-toggle" aria-label="Pause music">
+    <span class="music-icon music-icon-playing">
+      <span></span><span></span><span></span>
+    </span>
+    <span class="music-icon music-icon-paused">&#9658;</span>
+  </button>
+
+  <!-- ============ HERO ============ -->
+ <section class="hero" id="hero">
+  <div class="hero-content">
+
+    <p class="hero-eyebrow">
+      — today, the world got lucky again —
+    </p>
+
+    <h1 class="hero-title">
+      Happy Birthday
+      <br>
+      <span class="hero-name">Ya Ahamodi ❤️</span>
+    </h1>
+
+    <p class="hero-date">
+      Every moment with you is my favorite memory ✨
+    </p>
+
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span></span>
+    <p>scroll</p>
+  </div>
+</section>
+
+  <!-- ============ LETTER ============ -->
+  <section class="letter" id="letter">
+    <div class="letter-card fade-in">
+      <p class="letter-kicker">a little something I wanted to say</p>
+      <div class="letter-body">
+        <!-- Replace: Your personal message to him -->
+        <p>My love ❤️</p>
+        <p>
+      <p> مش عارفة أوصفلك قد إيه وجودك فارق معايا، بس كل اللي أقدر أقوله إنك بقيت المكان اللي بروحله وأنا مطمنة، والشخص اللي معاه بحس إني على طبيعتي من غير ما أمثل أو أخاف من أي حاجة. </p>
+
+<p> معاك عرفت يعني إيه أمان، ويعني إيه حد وجوده لوحده يطمن القلب. يمكن مش بعرف أقول الكلام ده دايمًا، بس حقيقي أنا ممتنة إن ربنا رزقني بيك. </p>
+
+<p> عملتلك المكان الصغير ده علشان أفضل أفكرك إن كل صورة هنا وراها لحظة حلوة، وكل ذكرى فيها ضحكة أو موقف أو إحساس عمره ما هيتنسي. ويمكن الصور دي متحكيش كل اللي جوانا، لكنها هتفضل تفتكرنا بأيام جميلة عشناها سوا. </p>
+
+<p> .كل سنة وأنت بخير يا حبيبي، ويا رب أشوفك دايمًا مبسوط، مطمن، وبتحقق كل اللي نفسك فيه. ولو ليا أمنية، فهي إن أفضل موجودة جنبك في كل خطوة، وأفضل أنا الشخص اللي بيريحك زي ما إنت دايمًا بتريحني </p>
+
+<p class="letter-signoff"> بحبك... وربنا يخليك ليا. ❤️ </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+<section class="gallery" id="gallery">
+
+    <p class="section-eyebrow fade-in">Our Beautiful Memories</p>
+    <h2 class="section-title fade-in">
+        Every Photo Holds A Piece Of My Heart ❤️
+    </h2>
+
+    <div class="gallery-grid">
+
+        <div class="polaroid fade-in rotate-left">
+            <div class="pin"></div>
+            <img src="imgs/photo 9.jpeg">
+            <div class="caption">
+                <h3>My Favorite Person ❤️</h3>
+                <p>You're the reason behind my happiest moments.</p>
+            </div>
+        </div>
+
+        <div class="polaroid fade-in rotate-right">
+            <div class="pin"></div>
+            <img src="imgs/photo 3.jpeg">
+            <div class="caption">
+                <h3>Always Together 💕</h3>
+                <p>Every memory with you is my favorite memory.</p>
+            </div>
+        </div>
+
+        <div class="polaroid fade-in rotate-left">
+            <div class="pin"></div>
+            <img src="imgs/photo 4.jpeg">
+            <div class="caption">
+                <h3>You & Me ✨</h3>
+                <p>The best chapter of my life started with you.</p>
+            </div>
+        </div>
+
+        <div class="polaroid fade-in rotate-right">
+            <div class="pin"></div>
+            <img src="imgs/photo 5.jpeg">
+            <div class="caption">
+                <h3>Forever ❤️</h3>
+                <p>I hope we celebrate every birthday together.</p>
+            </div>
+        </div>
+
+        <div class="polaroid fade-in rotate-left">
+            <div class="pin"></div>
+            <img src="imgs/photo 10.jpeg">
+            <div class="caption">
+                <h3>Lucky Me 🌹</h3>
+                <p>Meeting you was the greatest gift life gave me.</p>
+            </div>
+        </div>
+
+        <div class="polaroid fade-in rotate-right">
+            <div class="pin"></div>
+            <img src="imgs/photo 7.jpeg">
+            <div class="caption">
+                <h3>My Home 🤍</h3>
+                <p>Home is wherever I'm with you.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+  <!-- ============ VIDEO ============ -->
+<<section class="video-section" id="video-section">
+
+    <p class="section-eyebrow fade-in">Special Moments</p>
+    <h2 class="section-title fade-in">
+        The Moments I Never Want To Forget 🎥
+    </h2>
+
+    <div class="video-grid">
+
+        <!-- Video 1 -->
+        <div class="video-card fade-in">
+
+            <div class="phone-frame">
+                <video class="birthday-video" controls playsinline poster="imgs/video-poster.jpg">
+                    <source src="imgs/video 1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-info">
+                <h3>Our Happy Day ❤️</h3>
+                <p>Watching this reminds me how lucky I am to have you in my life.</p>
+            </div>
+
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card fade-in">
+
+            <div class="phone-frame">
+                <video class="birthday-video" controls playsinline poster="imgs/video-poster.jpg">
+                    <source src="imgs/video 2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-info">
+                <h3>Forever Together 💕</h3>
+                <p>Every second with you becomes a memory I'll always treasure.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+  <!-- ============ CLOSING ============ -->
+  <section class="closing" id="closing">
+    <div class="closing-content fade-in">
+      <p class="closing-kicker">and one last thing</p>
+      <h2 class="closing-title">Here's to another year<br />of us.</h2>
+      <p class="closing-text">
+        <!-- Replace: closing message -->
+        I love you today, I'll love you tomorrow, and every birthday after that.
+      </p>
+      <div class="closing-heart">&#10084;</div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>made with love, just for you</p>
+  </footer>
+
+</div>
+
+
+<!-- ============================================================
+     BACKGROUND MUSIC
+     Replace Background Music: swap the src below with your own file
+============================================================= -->
+<audio id="bg-music" loop preload="none">
+  <source src="imgs/Albumaty.Com_ramy_sbri_ehsasy_maak.mp3" type="audio/mpeg" />
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
